@@ -22,6 +22,7 @@ after_success:
   - rvm prepare $RUBY
   - cat < .known_hosts >> ~/.ssh/known_hosts
   - openssl aes-256-cbc -pass env:UPLOAD_PASSWORD -d -in travis_rsa.enc -out travis_rsa
+  - chmod 600 travis_rsa
   - scp -i travis_rsa $RUBY.tar.bz2 upload@rvm.io:~/
 after_failure:
   - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
