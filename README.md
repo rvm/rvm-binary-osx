@@ -1,6 +1,7 @@
 # Static Ruby
 
 [![Build Status](https://travis-ci.org/rvm/rvm-binary-osx.png?branch=master)](https://travis-ci.org/rvm/rvm-binary-osx)
+[latest binaries](http://rvm.io/binaries/osx/10.9/x86_64/)
 
 *(make sure to read messages and warnings)*
 
