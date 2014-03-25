@@ -1,5 +1,5 @@
 osx_image: mavericks
-env: RUBY=2.1.1
+env: RUBY=ruby-2.1.1
 language: objective-c
 install: curl -L https://get.smf.sh | sh
 before_script:
@@ -17,6 +17,7 @@ after_success:
   - ruby -ropenssl -ryaml -e 'puts ["libyaml "+Psych::LIBYAML_VERSION, OpenSSL::OPENSSL_VERSION]'
   - ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
   - rvm prepare $RUBY
+  - scp $RUBY.tar.bz2 upload@rvm.io:~/
 after_failure:
   - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
 notifications:
