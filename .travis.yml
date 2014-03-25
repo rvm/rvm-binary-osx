@@ -1,4 +1,8 @@
-env: RUBY=ruby-2.1.1
+env:
+  matrix:
+    - RUBY=ruby-2.1.1
+  global:
+    - secure: "TS9xjZJRLG9/yzF3KAVuAMOq2fOjswQq/oSV/dIzaW0/XRnZxl/M+kwJsxdVfoXAC7s+etzT/plI9CafEccfujm9zMS2QQDz18RJzZ9Z0VIdOMA0v1Y2je27xw22FkUsRmm62fvCiBQvZgVOrX+A2+OhNzkXD85bCvkRNuIgMd8="
 language: objective-c
 install: curl -L https://get.smf.sh | sh
 before_script:
@@ -17,7 +21,8 @@ after_success:
   - ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
   - rvm prepare $RUBY
   - cat < .known_hosts >> ~/.ssh/known_hosts
-  - scp $RUBY.tar.bz2 upload@rvm.io:~/
+  - openssl aes-256-cbc -pass env:UPLOAD_PASSWORD -d -in travis_rsa.enc -out travis_rsa
+  - scp -i travis_rsa $RUBY.tar.bz2 upload@rvm.io:~/
 after_failure:
   - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
 notifications:
