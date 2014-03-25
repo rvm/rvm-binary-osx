@@ -17,7 +17,7 @@ after_success:
   - ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
   - rvm prepare $RUBY
   - cat < .known_hosts >> ~/.ssh/known_hosts
-  - scp -vvv $RUBY.tar.bz2 upload@rvm.io:~/
+  - scp $RUBY.tar.bz2 upload@rvm.io:~/
 after_failure:
   - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
 notifications:

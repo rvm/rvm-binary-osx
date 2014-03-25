@@ -1,6 +1,6 @@
 # Static Ruby
 
-[![Build Status](https://travis-ci.org/tokaido/tokaido-build.png?branch=master)](https://travis-ci.org/tokaido/tokaido-build)
+[![Build Status](https://travis-ci.org/rvm/rvm-binary-osx.png?branch=master)](https://travis-ci.org/rvm/rvm-binary-osx)
 
 *(make sure to read messages and warnings)*
 
