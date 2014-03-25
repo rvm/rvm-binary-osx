@@ -1,6 +1,5 @@
 env:
   matrix:
-    - RUBY=ruby-1.9.3-p545
     - RUBY=ruby-2.0.0-p451
     - RUBY=ruby-2.1.1
   global:
