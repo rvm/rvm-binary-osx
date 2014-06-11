@@ -1,8 +1,7 @@
 env:
   matrix:
-#    - RUBY=ruby-2.0.0-p481
-#    - RUBY=ruby-2.1.2
-    - RUBY=ruby-1.9.3-p547
+    - RUBY=ruby-2.0.0-p481
+    - RUBY=ruby-2.1.2
   global:
     - secure: "TS9xjZJRLG9/yzF3KAVuAMOq2fOjswQq/oSV/dIzaW0/XRnZxl/M+kwJsxdVfoXAC7s+etzT/plI9CafEccfujm9zMS2QQDz18RJzZ9Z0VIdOMA0v1Y2je27xw22FkUsRmm62fvCiBQvZgVOrX+A2+OhNzkXD85bCvkRNuIgMd8="
 language: objective-c
