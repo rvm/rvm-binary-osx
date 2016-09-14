@@ -7,7 +7,7 @@
 
 Installing used software:
 
-    curl -L https://get.smf.sh | sh
+    curl -ksSL https://install.smf.sh | sm_curl_command="curl -k"  bash -
     curl -L https://get.rvm.io | bash
 
 Compiling static ruby:
